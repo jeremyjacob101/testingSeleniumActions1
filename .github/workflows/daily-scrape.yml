@@ -9,13 +9,19 @@ permissions:
 #   schedule:
 #     - cron: "*/10 * * * *"
 
+# Every Tuesday at 630pm IL time
+# on:
+#   workflow_dispatch: {}
+#   schedule:
+#     # Israel Daylight Time (UTC+3): 18:30 local → 15:30 UTC
+#     - cron:  '30 15 * * 2'
+#     # Israel Standard Time (UTC+2): 18:30 local → 16:30 UTC
+#     - cron:  '30 16 * * 2'
+
+# Once a year
 on:
-  workflow_dispatch: {}
   schedule:
-    # Israel Daylight Time (UTC+3): 18:30 local → 15:30 UTC
-    - cron:  '30 15 * * 2'
-    # Israel Standard Time (UTC+2): 18:30 local → 16:30 UTC
-    - cron:  '30 16 * * 2'
+    - cron: '0 0 1 1 *'
 
 jobs:
   scrape:

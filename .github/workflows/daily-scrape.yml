@@ -2,8 +2,7 @@ name: Daily PlanetCinema Scrape
 
 on:
   schedule:
-    # runs every day at 00:00 UTC
-    - cron: '0 0 * * *'
+    - cron: "*/5 * * * *"
 
 jobs:
   scrape:

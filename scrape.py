@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import csv
 
 
@@ -29,7 +30,7 @@ def main():
     )
     text = elem.text.strip()
 
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.now(ZoneInfo("Asia/Jerusalem")).strftime("%Y-%m-%d %H:%M:%S")
     row = f"{now} - {text}"
 
     with open("output.csv", "a", newline="", encoding="utf-8") as f:

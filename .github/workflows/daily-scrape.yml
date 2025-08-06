@@ -3,18 +3,19 @@ name: Daily PlanetCinema Scrape
 permissions:
   contents: write
 
-on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: "*/10 * * * *"
-
+# Every 10 minutes
 # on:
 #   workflow_dispatch: {}
 #   schedule:
-#     # Israel Daylight Time (UTC+3): 18:30 local → 15:30 UTC
-#     - cron:  '30 15 * * 2'
-#     # Israel Standard Time (UTC+2): 18:30 local → 16:30 UTC
-#     - cron:  '30 16 * * 2'
+#     - cron: "*/10 * * * *"
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Israel Daylight Time (UTC+3): 18:30 local → 15:30 UTC
+    - cron:  '30 15 * * 2'
+    # Israel Standard Time (UTC+2): 18:30 local → 16:30 UTC
+    - cron:  '30 16 * * 2'
 
 jobs:
   scrape:
